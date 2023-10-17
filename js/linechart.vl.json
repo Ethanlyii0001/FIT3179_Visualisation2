@@ -1,0 +1,108 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+      "url": "https://raw.githubusercontent.com/Ethanlyii0001/FIT3179_Visualisation2/main/data/averaged_data_by_year_region.csv"
+  },
+  "width": 400,
+  "height": 300,
+  "encoding": {
+      "x": {
+          "field": "Year",
+          "type": "temporal",
+          "title": "Time"
+      }
+  },
+  "layer": [
+      {
+          "mark": "line",
+          "encoding": {
+              "y": {
+                  "field": "Life Expectancy World Bank",
+                  "type": "quantitative",
+                  "title": "Life Expectancy",
+                  "scale": {
+                      "domain": [50, 80]
+                  }
+              },
+              "color": {
+                "field": "Region",
+                "type": "nominal",
+                "title": "Region",
+                "scale": {
+                  "domain": [
+                    "North America",
+                    "South America",
+                    "Europe",
+                    "Africa",
+                    "Asia",
+                    "Oceania"
+                  ],
+                  "range": [
+                    "#e41a1c",
+                    "#984ea3",
+                    "#ff7f00",
+                    "#89d3df",
+                    "#377eb8",
+                    "#a65628"
+                  ]
+                }
+            }
+          }
+      },
+      {
+          "mark": "point",
+          "encoding": {
+              "y": {
+                  "field": "Life Expectancy World Bank",
+                  "type": "quantitative"
+              },
+              "color": {
+                  "field": "Region",
+                  "type": "nominal"
+              },
+              "opacity": {
+                  "condition": {"param": "hover", "empty": false, "value": 1},
+                  "value": 0
+              }
+          }
+      },
+      {
+          "transform": [{"pivot": "Region", "value": "Life Expectancy World Bank", "groupby": ["Year"]}],
+          "mark": "rule",
+          "encoding": {
+              "opacity": {
+                  "condition": {"value": 0.3, "param": "hover", "empty": false},
+                  "value": 0
+              },
+              "tooltip": [
+                  {"field": "Year", "type": "temporal", "title": "Year","timeUnit":"year"},
+                  {"field": "Europe", "type": "quantitative", "title": "Europe"},
+                  {"field": "North America", "type": "quantitative", "title": "North America"},
+                  {"field": "South America", "type": "quantitative", "title": "South America"},
+                  {"field": "Asia", "type": "quantitative", "title": "Asia"},
+                  {"field": "Oceania", "type": "quantitative", "title": "Oceania"},
+                  {"field": "Africa", "type": "quantitative", "title": "Africa"}
+              ]
+          },
+          "params": [{
+              "name": "hover",
+              "select": {
+                  "type": "point",
+                  "fields": ["Year"],
+                  "nearest": true,
+                  "on": "pointermove",
+                  "clear": "pointerout",
+                  "encodings": ["x"]
+              }
+          }]
+      }
+  ],
+  "config": {
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    },
+    "background": "#80B2B3"
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "Heatmap of Correlation Matrix",
+  "width": 450,
+  "height": 400,
+  "data": {
+    "url": "https://raw.githubusercontent.com/Ethanlyii0001/FIT3179_Visualisation2/main/data/correlation_matrix.csv"
+  },
+  "layer": [
+    {
+      "params": [{"name": "highlight", "select": "point"}],
+      "mark": {
+        "type": "rect",
+        "stroke": "#458e9b61",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {"field": "row", "type": "nominal", "axis": {"title": null}},
+        "y": {"field": "col", "type": "nominal", "axis": {"title": null}},
+        "color": {
+          "field": "value",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "browns",
+            "domainMid": 0
+          },
+          "legend": null
+        },
+        "stroke":{
+          "condition":{
+            "param":"highlight",
+            "empty":false,
+            "value":"black"
+          },
+          "value":null
+        },
+        "opacity":{
+          "condition":{"param":"highlight", "value" : 1},
+          "value":0.5
+        },
+        "order":{"condition":{"param":"highlight", "value":1},
+        "value":0},
+        "tooltip": [
+          {"field": "row", "type": "nominal", "title": "Row"},
+          {"field": "col", "type": "nominal", "title": "Column"},
+          {"field": "value", "type": "quantitative", "title": "Correlation", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 10
+      },
+      "encoding": {
+        "x": {"field": "row", "type": "nominal"},
+        "y": {"field": "col", "type": "nominal"},
+        "text": {"field": "value", "type": "quantitative", "format": ".2f"},
+        "color": {
+          "condition": {
+            "test": "datum.value > 0.5",
+            "value": "white"
+          },
+          "value": "black"
+        }
+      }
+    }
+  ],
+  "config": {
+    "style": {
+      "cell": {
+        "stroke": "transparent"
+      }
+    },
+    "background": "#80B2B3"
+  }
+}
