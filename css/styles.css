@@ -1,0 +1,106 @@
+#page {
+    width: 1200px;    
+    margin: auto;
+    padding: 50px; 
+    padding-top: 50px;
+    background-color: #F7F2E7;  
+}
+
+body {
+    background-image: url(backgournd.png);
+    background-repeat: repeat;
+    background-size: auto auto;
+}
+
+.center-v{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;  
+}
+
+
+.rounded-box {
+    border: 2px solid #E5E5E5;  
+    border-radius: 15px;    
+    padding: 20px;  
+    margin: 15px 0; 
+    background-color: #80B2B3;  
+    transition: transform 0.2s; 
+}
+
+.rounded-box:hover {
+    transform: scale(1.02);  
+}
+
+.right{
+    text-align: right;
+}
+
+
+.topic {  
+    padding: 20px; 
+}
+
+
+.center{
+    text-align: center;
+}
+
+
+.top {
+    font-weight: bold; 
+    margin-top: 15px; 
+}
+
+.topic-text{
+    font-family: 'AR One Sans', sans-serif;
+    font-size: 20px;
+}
+
+.text{
+    font-family: 'AR One Sans', sans-serif;
+    font-size: large;
+}
+
+#title-text{
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+}
+
+#backgournd-text{
+    font-family: 'Roboto', sans-serif;
+}
+
+.box{
+    padding: 10px;
+}
+
+#end-text{
+    font-size: 15px;
+}
+
+.tip{
+    font-size: 14px;
+    color: #4f5050;
+}
+
+#life-expectancy {
+    margin-top: 4px;
+    margin-left: -4px;
+    width: 150px;
+}
+
+#bottom {
+    margin-top: 170px;
+    margin-left: -4px;
+    width: 150px;
+}
+
+
+.North-America { color: #e41a1c; text-shadow: 1px 1px 0px black;}
+.South-America { color: #984ea3; text-shadow: 1px 1px 0px black;}
+.Europe { color: #ff7f00; text-shadow: 1px 1px 0px black;}
+.Africa { color: #89d3df; text-shadow: 1px 1px 0px black;}
+.Asia { color: #377eb8; text-shadow: 1px 1px 0px black;}
+.Oceania { color: #a65628; text-shadow: 1px 1px 0px black;}

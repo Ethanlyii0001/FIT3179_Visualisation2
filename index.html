@@ -25,7 +25,7 @@
     <style type="text/css">
       body {
           background-image: url(backgournd.png);
-          background-repeat: repeat;
+          background-repeat: auto;
           background-size: auto auto;
       }
     </style>
@@ -75,10 +75,12 @@
               </div>
               <div class="center-v">
                 <div class="text">
-                  <p>The distribution of <b>life expectancy</b> varies significantly across the world. Evident from the map, <span class="Europe">European</span> nations typically boast a higher <b>life expectancy</b>,
-                    whereas <span class="Africa">African</span> regions lag behind in this metric. The countries with the top 10 <b>life expectancy</b> include <span class="Asia">Japan</span>, <span class="Europe">Switzerland</span>, <span class="Europe">Iceland</span>, <span class="Europe">Italy</span>, <span class="Europe">Spain</span>, <span class="Oceania">Australia</span>,
-                    <span class="Europe">Sweden</span>, <span class="Europe">France</span>, <span class="Asia">Israel</span>, and <span class="Europe">Norway</span>. Most of these nations are <span class="Europe">European</span>, with only <span class="Asia">Japan</span> and <span class="Oceania">Australia</span> as exceptions. Countries shaded in light grey signify the
-                    absence of available data.</p>
+                  <div class="box">
+                    <p>The distribution of <b>life expectancy</b> varies significantly across the world. Evident from the map, <span class="Europe">European</span> nations typically boast a higher <b>life expectancy</b>,
+                      whereas <span class="Africa">African</span> regions lag behind in this metric. The countries with the top 10 <b>life expectancy</b> include <span class="Asia">Japan</span>, <span class="Europe">Switzerland</span>, <span class="Europe">Iceland</span>, <span class="Europe">Italy</span>, <span class="Europe">Spain</span>, <span class="Oceania">Australia</span>,
+                      <span class="Europe">Sweden</span>, <span class="Europe">France</span>, <span class="Asia">Israel</span>, and <span class="Europe">Norway</span>. Most of these nations are <span class="Europe">European</span>, with only <span class="Asia">Japan</span> and <span class="Oceania">Australia</span> as exceptions. Countries shaded in light grey signify the
+                      absence of available data.</p>
+                  </div>
                 </div>
               </div>
         </div>
@@ -94,42 +96,41 @@
   
         <div class="rounded-box">
             <div class="pure-g">
-              <div class="text">
                 <div class="pure-u-1-3">
                   <div class="box">
                     <div id="radialplot"></div>
-                  </div>
-                </div>
-                <div class="pure-u-1-3">
-                  <div class="box">
-                    <p><b>life expectancy</b> disparities between countries can be profound, swayed by a myriad of elements including healthcare quality, economic development, and lifestyle choices.
-                      As of my last update in September 2021, here's a breakdown of the rankings:</p>
-                    <div class="top">
-                      <p>· Top 10:</p>
-                    </div>
-                    <p>The variance in <b>life expectancy</b> is minimal among these countries. Seven out of the ten belong to <span class="Europe">Europe</span>, underscoring the continent's advanced living standards and healthcare facilities.
-                      However, <span class="Asia">Asia</span> also boasts three countries with high <b>life expectancy</b>, hinting at their economic prowess or other influencing factors that set them apart in the <span class="Asia">Asian</span> context.</p>
-                    <p></p>
-                    <p></p>
                     <div class="tip">
                       <p>* Displayed in the middle is the current quantity</p>
                     </div>
                   </div>
                 </div>
                 <div class="pure-u-1-3">
-                  <div class="box">
-                    <div class="top">
-                      <p>· Top 50:</p>
+                  <div class="text">
+                    <div class="box">
+                      <p><b>life expectancy</b> disparities between countries can be profound, swayed by a myriad of elements including healthcare quality, economic development, and lifestyle choices.
+                        As of my last update in September 2021, here's a breakdown of the rankings:</p>
+                      <div class="top">
+                        <p>· Top 10:</p>
+                      </div>
+                      <p>The variance in <b>life expectancy</b> is minimal among these countries. Seven out of the ten belong to <span class="Europe">Europe</span>, underscoring the continent's advanced living standards and healthcare facilities.
+                        However, <span class="Asia">Asia</span> also boasts three countries with high <b>life expectancy</b>, hinting at their economic prowess or other influencing factors that set them apart in the <span class="Asia">Asian</span> context.</p>
                     </div>
-                    <p>The <b>life expectancy</b> gap between the highest (<span class="Asia">Japan</span>) and the 50th (<span class="South-America">Colombia</span>) is roughly 7.5 years. <span class="Europe">Europe</span> continues to dominate with 24 countries, while <span class="Africa">Africa</span> remains conspicuously absent.
-                      <span class="Asia">Asia</span> and <span class="North-America">North America</span> are neck-and-neck in representation, whereas <span class="Oceania">Oceania</span>, despite its three entries, has fewer countries overall.</p>
-                  <div class="top">
-                    <div class="top">
-                      <p>· Complete Rankings:</p>
-                    </div>
-                    <p>A stark contrast is observed between the highest (<span class="Asia">Japan</span> at 82.89 years) and the lowest (<span class="Africa">Lesotho</span> at 47.1 years)
-                      <b>life expectancy</b>, nearly halving the lifespan. The reasons for these disparities require further exploration.</p>
                   </div>
+                </div>
+                <div class="pure-u-1-3">
+                  <div class="text">
+                    <div class="box">
+                      <div class="top">
+                        <p>· Top 50:</p>
+                      </div>
+                      <p>The <b>life expectancy</b> gap between the highest (<span class="Asia">Japan</span>) and the 50th (<span class="South-America">Colombia</span>) is roughly 7.5 years. <span class="Europe">Europe</span> continues to dominate with 24 countries, while <span class="Africa">Africa</span> remains conspicuously absent.
+                        <span class="Asia">Asia</span> and <span class="North-America">North America</span> are neck-and-neck in representation, whereas <span class="Oceania">Oceania</span>, despite its three entries, has fewer countries overall.</p>
+                      <div class="top">
+                        <p>· Complete Rankings:</p>
+                      </div>
+                      <p>A stark contrast is observed between the highest (<span class="Asia">Japan</span> at 82.89 years) and the lowest (<span class="Africa">Lesotho</span> at 47.1 years)
+                        <b>life expectancy</b>, nearly halving the lifespan. The reasons for these disparities require further exploration.</p>
+                    </div>
                 </div>
               </div>
             </div>
@@ -149,13 +150,22 @@
               <div id="heatmap"></div>
             </div>
             <div class="pure-u-2-5">
-              <div class="center-v">
                 <div class="text">
                   <p>A heatmap reveals the degree to which various elements influence <b>life expectancy</b>. Sanitation and undernourishment stand out as paramount, with respective correlations of 0.71 and -0.71.
                     A strong positive correlation with sanitation suggests that improved hygiene translates to heightened <b>life expectancy</b>. Conversely, a reduction in undernourishment, implying better access to nutritious food, 
                     is closely tied to increased longevity.</p>
                 </div>
-              </div>
+                <div class="pure-g">
+                  <div class="pure-u-1-3">
+                    <img src="sanitation.png", id="bottom">
+                  </div>
+                  <div class="pure-u-1-3">
+                    <img src="life expectancy.png", id="life-expectancy">
+                  </div>
+                  <div class="pure-u-1-3">
+                    <img src="undernourishment.png", id="bottom">
+                  </div>
+                </div>
             </div>
           </div>
         </div>
@@ -170,21 +180,21 @@
         <div class="rounded-box">
           <div class="pure-g">
               <div class="pure-u-1-2">
-                <div class="tip">
-                  <div class="right">
-                    <p>* You can select the Continent to filter the chart</p>
-                  </div>
-                </div>
                 <div class="center-v">
                   <div class="text">
-                    <p>The scatter plot further elucidates the relationships hinted at by the heatmap. Clear disparities emerge among continents concerning sanitation, undernourishment, and <b>life expectancy</b>. <span class="North-America">North American</span> and <b>life expectancy</b> nations excel across the board,
-                      showcasing longevity, superior sanitation, and minimal undernourishment. In contrast, <span class="Africa">African</span> nations grapple with reduced <b>life expectancy</b>, compromised sanitation, and heightened malnutrition issues. <span class="Asia">Asian</span> nations display a spectrum of outcomes.
-                      <span class="South-America">South American</span> countries, while trailing <span class="Europe">Europe</span> and <span class="North-America">North America</span>, fare better than several <span class="Asia">Asian</span> and <span class="Africa">African</span> nations. <span class="Oceania">Oceania</span> presents a mixed bag with most countries mirroring <span class="Europe">European</span> standards, yet a few grappling with significant undernourishment.</p>
+                    <div class="box">
+                      <p>The scatter plot further elucidates the relationships hinted at by the heatmap. Clear disparities emerge among continents concerning sanitation, undernourishment, and <b>life expectancy</b>. <span class="North-America">North American</span> and <b>life expectancy</b> nations excel across the board,
+                        showcasing longevity, superior sanitation, and minimal undernourishment. In contrast, <span class="Africa">African</span> nations grapple with reduced <b>life expectancy</b>, compromised sanitation, and heightened malnutrition issues. <span class="Asia">Asian</span> nations display a spectrum of outcomes.
+                        <span class="South-America">South American</span> countries, while trailing <span class="Europe">Europe</span> and <span class="North-America">North America</span>, fare better than several <span class="Asia">Asian</span> and <span class="Africa">African</span> nations. <span class="Oceania">Oceania</span> presents a mixed bag with most countries mirroring <span class="Europe">European</span> standards, yet a few grappling with significant undernourishment.</p>
+                      </div>
                   </div>
                 </div>
               </div>
               <div class="pure-u-1-2">
                   <div id="scatterplot"></div>
+                  <div class="tip">
+                    <p>* You can select the Continent or set the Minimum Undernourishment to filter the chart</p>
+                  </div>
               </div>
           </div>
         </div>
@@ -202,10 +212,12 @@
               <div class="pure-u-1-2">
                 <div class="center-v">
                   <div class="text">
-                    <p>All regions globally have observed an upward trend in <b>life expectancy</b>, likely reflecting advancements in healthcare, medical innovations, and an overall elevation in living standards. <span class="Africa">Africa</span>, in particular, stands out.
-                      Although it registered the lowest <b>life expectancy</b> among all regions in 2002, the subsequent decade witnessed a remarkable acceleration in its growth rate, even surpassing other regions in certain aspects. In contrast, <span class="Europe">Europe</span>, <span class="North-America">North America</span>, <span class="South-America">South America</span>,
-                      <span class="Asia">Asia</span>, and <span class="Oceania">Oceania</span> have shown relatively consistent growth, devoid of dramatic fluctuations. This trend underscores the potential improvements in sanitation and nutrition in <span class="Africa">Africa</span>. As these critical factors enhance further, they could play a pivotal
-                      role in bridging the <b>life expectancy</b> gap between <span class="Africa">Africa</span> and other continents.</p>
+                    <div class="box">
+                      <p>All regions globally have observed an upward trend in <b>life expectancy</b>, likely reflecting advancements in healthcare, medical innovations, and an overall elevation in living standards. <span class="Africa">Africa</span>, in particular, stands out.
+                        Although it registered the lowest <b>life expectancy</b> among all regions in 2002, the subsequent decade witnessed a remarkable acceleration in its growth rate, even surpassing other regions in certain aspects. In contrast, <span class="Europe">Europe</span>, <span class="North-America">North America</span>, <span class="South-America">South America</span>,
+                        <span class="Asia">Asia</span>, and <span class="Oceania">Oceania</span> have shown relatively consistent growth, devoid of dramatic fluctuations. This trend underscores the potential improvements in sanitation and nutrition in <span class="Africa">Africa</span>. As these critical factors enhance further, they could play a pivotal
+                        role in bridging the <b>life expectancy</b> gap between <span class="Africa">Africa</span> and other continents.</p>
+                    </div>
                   </div>
                 </div>
               </div>

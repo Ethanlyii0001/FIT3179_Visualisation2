@@ -1,0 +1,238 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "params": [
+      {
+        "name": "projection_selection",
+        "value": "equalEarth",
+        "bind": {
+          "input": "select",
+          "options": [
+            "albersUsa",
+            "azimuthalEqualArea",
+            "conicEquidistant",
+            "equalEarth",
+            "equirectangular",
+            "mercator",
+            "orthographic",
+            "stereographic"
+          ],
+          "name": "Projection: "
+        }
+      }
+    ],
+    "data": {
+      "url": "https://raw.githubusercontent.com/Ethanlyii0001/FIT3179_Visualisation2/main/js/ne_110m_admin_0_countries.topojson",
+      "format": {
+        "type": "topojson", 
+        "feature": "ne_110m_admin_0_countries"}
+    },
+  
+    "vconcat": [
+      {
+        "title": "Life Expectancy World Bank",
+        "width": 1000,
+        "height": 600,
+        "projection": {"type": {"expr": "projection_selection"}},
+        "layer": [
+          {
+            "params": [
+              {
+                "name": "highlight",
+                "select": {"type": "point", "on": "mouseover"}
+              },
+              {"name": "select", "select": "point"}
+            ],
+            "mark": {"type": "geoshape", "stroke": "white"},
+            "encoding": {"tooltip": {"field": "note"}}
+          },
+          {
+            "transform": [
+              {
+                "lookup": "properties.NAME",
+                "from": {
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/Ethanlyii0001/FIT3179_Visualisation2/main/data/averaged_features_by_country.csv"
+                  },
+                  "key": "Country Name",
+                  "fields": ["Life_Expectancy","CO2","Continent","Communicable","NonCommunicable"]
+                }
+              }
+            ],
+            "mark": {"type": "geoshape", "stroke": "black"},
+            "params": [{"name": "countrySelection", "select": {"type": "point"}}],
+            "encoding": {
+              "color": {
+                "field": "Life_Expectancy",
+                "type": "quantitative",
+                "scale": {
+                  "scheme": "lighttealblue"
+                },
+                "legend": {
+                  "direction": "vertical",
+                  "gradientLength": 500,       
+                  "offset": 5,          
+                  "titleAlign": "center", 
+                  "labelAlign": "left"        
+                }
+              },
+              "tooltip": [
+                {
+                  "field": "properties.NAME",
+                  "type": "nominal",
+                  "title": "Country"
+                },
+                {
+                  "field": "Continent", 
+                  "type": "nominal", 
+                  "title": "Continent"
+                },
+                {
+                  "field": "Life_Expectancy",
+                  "type": "quantitative",
+                  "format": ".2f"
+                }
+              ],
+              "strokeOpacity": {
+              "condition": [
+                {
+                  "param": "highlight",
+                  "empty": false,
+                  "value": 1
+                }
+              ],
+              "value": 0.1
+              }
+            }
+          },
+          {
+            "transform": [
+              {
+                "lookup": "properties.NAME",
+                "from": {
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/countryInfo.csv"
+                  },
+                  "key": "name",
+                  "fields": ["latitude", "longitude"]
+                }
+              }
+            ],
+            "mark": {
+              "type": "text",
+              "baseline": "middle",
+              "dy": -12,
+              "fontSize": 11.5,
+              "fontStyle": "italic",
+              "fontWeight": "bold"
+            },
+            
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "text": {"field": "properties.NAME", "type": "nominal"},
+              "color": {"value": "#ed6d80"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['properties.NAME'] == 'Sweden' || datum['properties.NAME'] == 'Japan' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Switzerland' ||  datum['properties.NAME'] == 'Iceland' ||  datum['properties.NAME'] == 'Israel'|| datum['properties.NAME'] == 'Spain'||  datum['properties.NAME'] == 'Italy'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+          },
+          {
+            "data": {
+              "values": [
+                {
+                  "latitude": 44,
+                  "longitude": -7,
+                  "text": "France"
+                }
+              ]
+            },
+            "mark": {
+              "type": "text",
+              "baseline": "middle",
+              "dy": -12,
+              "fontSize": 11.5,
+              "fontStyle": "italic",
+              "fontWeight": "bold"
+            },
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "text": {"field": "text", "type": "nominal"},
+              "color": {"value": "#ed6d80"},
+              "opacity": {"value": 1}
+            }
+          },
+          {
+            "data": {
+              "values": [
+                {
+                  "latitude": 59,
+                  "longitude": 0,
+                  "text": "Norway"
+                }
+              ]
+            },
+            "mark": {
+              "type": "text",
+              "baseline": "middle",
+              "dy": -12,
+              "fontSize": 11.5,
+              "fontStyle": "italic",
+              "fontWeight": "bold"
+            },
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "text": {"field": "text", "type": "nominal"},
+              "color": {"value": "#ed6d80"},
+              "opacity": {"value": 1}
+            }
+          },
+          {
+            "transform": [
+              {
+                "lookup": "properties.NAME",
+                "from": {
+                  "data": {
+                    "url": "https://raw.githubusercontent.com/Ethanlyii0001/FIT3179_Visualisation2/main/data/countryInfo.csv"
+                  },
+                  "key": "name",
+                  "fields": ["latitude", "longitude"]
+                }
+              }
+            ],
+            "mark": { "type": "circle"},
+            
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "text": {"field": "properties.NAME", "type": "nominal"},
+              "color": {"value": "#ed6d80"},
+              "opacity": {
+                "condition": {
+                  "test": "datum['properties.NAME'] == 'Sweden' || datum['properties.NAME'] == 'Japan' || datum['properties.NAME'] == 'Australia' || datum['properties.NAME'] == 'Switzerland' ||  datum['properties.NAME'] == 'Iceland' ||  datum['properties.NAME'] == 'Israel'|| datum['properties.NAME'] == 'Spain'||  datum['properties.NAME'] == 'Italy'||  datum['properties.NAME'] == 'Norway' || datum['properties.NAME'] == 'France'",
+                  "value": 1
+                },
+                "value": 0
+              }
+            }
+          }
+        ]
+      }
+  
+    ],
+    "config": {
+        "style": {
+          "cell": {
+            "stroke": null
+          }
+        },
+        "background": "#FFFAF0",
+        "legend": {"orient": "top-left", "offset": 1}
+      }
+  }
